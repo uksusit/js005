@@ -13,14 +13,37 @@ const ancestor = {
 };
 // Change code below this line
 
-const parent = {};
+const parent = Object.create(ancestor)
+{
 parent.name = "Stacey";
 parent.surname = "Moore";
 parent.age = 54;
+};
 
-const child = {};
+console.log(parent);
+
+const child = Object.create(parent)
+{
 child.name = "Jason";
-child.age = 27;
+  child.age = 27;
+};
+
+console.log(child);
+
+console.log("ancestor.isPrototypeOf(parent)---true", ancestor.isPrototypeOf(parent));
+console.log("parent.isPrototypeOf(child)---true", parent.isPrototypeOf(child));
+console.log("true", ancestor.hasOwnProperty("surname"));
+console.log("Dawson", ancestor.surname );
+console.log("true", parent.hasOwnProperty("surname"));
+console.log("Moore", parent.surname);
+console.log(child.hasOwnProperty("surname"));
+console.log("Moore", child.surname);
+console.log("true", ancestor.hasOwnProperty("heritage"));
+console.log("Irish", ancestor.heritage);
+console.log(parent.hasOwnProperty("heritage"));
+console.log("Irish", parent.heritage);
+console.log(child.hasOwnProperty("heritage"));
+console.log("Irish", child.heritage);
 
 // Change code above this line
 
