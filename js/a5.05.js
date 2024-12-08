@@ -1,5 +1,33 @@
+<<<<<<< HEAD
 // Завдання 5/20
 // Зміни код, побудувавши ланцюжок прототипів таким чином, щоб об'єкт ancestor був прототипом для parent, а той, своєю чергою, був прототипом для child.
+=======
+const ancestor = {
+    name: "Paul",
+    age: 83,
+    surname: "Dawson",
+    heritage: "Irish",
+  };
+  // Change code below this line
+  
+  const parent = Object.create(ancestor);
+  // {
+  // name: "Stacey",
+  // surname: "Moore",
+  // age: 54,
+  // };
+  
+  const child = Object.create(parent);
+  // {};
+  child.name = "Jason";
+  child.age = 27;
+  
+  // Change code above this line
+
+  
+
+//   Зміни код, побудувавши ланцюжок прототипів таким чином, щоб об'єкт ancestor був прототипом для parent, а той, своєю чергою, був прототипом для child.
+>>>>>>> 942d22c52656c03570c01a1cb8d51c3cae03ee02
 
 // Оголошена змінна ancestor
 // Значення змінної ancestor - це об'єкт.
@@ -21,6 +49,7 @@
 // Звернення до parent.heritage повертає "Irish"
 // Виклик child.hasOwnProperty("heritage") повертає false
 // Звернення до child.heritage повертає "Irish"
+<<<<<<< HEAD
 // Використовується метод Object.create()
 // ЗАДАЧА: ЛАНЦЮЖОК ПРОТОТИПІВ
 
@@ -44,3 +73,6 @@ child.name = "Jason";
 child.age = 27;
 
 // Change code above this line
+=======
+// Використовується метод Object.create()
+>>>>>>> 942d22c52656c03570c01a1cb8d51c3cae03ee02
