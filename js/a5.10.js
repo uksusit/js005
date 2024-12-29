@@ -17,14 +17,18 @@ class Storage {
       this.items.push(newItem);
     }
 
-    // metood removeItem
-    removeItem(itemToRemove)
-      { 
-         console.log(itemToRemove);
-         console.log(this.items);
-         
-         sessionStorage.removeItem(itemToRemove);
-      }
+    // metod removeItem
+    removeItem(itemToRemove) {
+      this.items = this.items.filter(item => item !== itemToRemove);
+      // console.log(this.items.filter(item => item !== itemToRemove));
+    }
+    // removeItem(itemToRemove)
+    //   { 
+    //      console.log(itemToRemove);
+        //  console.log(this.items);
+
+    //      sessionStorage.removeItem(itemToRemove);
+    //   }
   }
   
   // Change code above this line
@@ -38,7 +42,6 @@ class Storage {
 
 
 // приклад видалення з масиву
-
 //   public static int[] removeItem(int[] numbers, int index){
 //     for (int i = index; i < numbers.length -1; i++) {
 //         numbers[i] = numbers[i + 1];
