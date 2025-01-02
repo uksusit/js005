@@ -1,6 +1,6 @@
 class StringBuilder {
     constructor(initialValue) {
-      
+        this.value = value;  
     }
     getValue()
     {
