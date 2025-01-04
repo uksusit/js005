@@ -43,7 +43,7 @@ class Storage {
 
 // приклад видалення з масиву
 //   public static int[] removeItem(int[] numbers, int index){
-//     for (int i = index; i < numbers.length -1; i++) {
+//     for (int i = index; i < num1bers.length -1; i++) {
 //         numbers[i] = numbers[i + 1];
 //     }
 //     return Arrays.copyOf(numbers, numbers.length - 1);
