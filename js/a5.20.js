@@ -42,70 +42,59 @@
 // Виклик mango.isBlacklisted("poly@mail.com") повертає true
 
 
-
 class User {
-    email;
-  
-    constructor(email) {
-      this.email = email;
-    }
-  
-    get email() {
-      return this.email;
-    }
-  
-    set email(newEmail) {
-      this.email = newEmail;
-    }
+  email;
+
+  constructor(email) {
+    this.email = email;
   }
-  class Admin extends User {
-//     // Change code below this line
-  
-//     static AccessLevel = {
-//       BASIC: "basic",
-//       SUPERUSER: "superuser",
-//     };
-  
-//     constructor({ email, accessLevel }) {
-//       super(email);
-//       this.accessLevel = accessLevel;
-//     }
 
-blacklistedEmails = [];
-static AccessLevel = {
-  BASIC: "basic",
-  SUPERUSER: "superuser",
-};
+  get email() {
+    return this.email;
+  }
 
-constructor({ email, accessLevel }) {
-  super(email);
-  this.accessLevel = accessLevel;
+  set email(newEmail) {
+    this.email = newEmail;
+  }
 }
+class Admin extends User {
+  // Change code below this line
 
-blacklist(email) {
-
-  this.blacklistedEmails = this.blacklistedEmails + email;
-}
-isBlacklisted(email) {
+  static AccessLevel = {
+    BASIC: "basic",
+    SUPERUSER: "superuser",
+  };
     
-  return (this.blacklistedEmails.includes(email));
-
-}
-
-  
-    // Change code above this line
+  constructor({ email, accessLevel, }) {
+    super(email);
+    this.accessLevel = accessLevel;
   }
   
-  const mango = new Admin({
-    email: "mango@mail.com",
-    accessLevel: Admin.AccessLevel.SUPERUSER,
-  });
+  blacklistedEmails = [];
   
-  console.log(mango.email); // "mango@mail.com"
-  console.log(mango.accessLevel); // "superuser"
+  blacklist(email) {
   
-  mango.blacklist("poly@mail.com");
-  console.log(mango.blacklistedEmails); // ["poly@mail.com"]
-  console.log(mango.isBlacklisted("mango@mail.com")); // false
-  console.log(mango.isBlacklisted("poly@mail.com")); // true
+    this.blacklistedEmails.push(email);
+  }
+    
+  isBlacklisted(email) {
+      
+    return (this.blacklistedEmails.includes(email));
   
+  }
+
+  // Change code above this line
+}
+
+const mango = new Admin({
+  email: "mango@mail.com",
+  accessLevel: Admin.AccessLevel.SUPERUSER,
+});
+
+console.log(mango.email); // "mango@mail.com"
+console.log(mango.accessLevel); // "superuser"
+
+mango.blacklist("poly@mail.com");
+console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+console.log(mango.isBlacklisted("mango@mail.com")); // false
+console.log(mango.isBlacklisted("poly@mail.com")); // true
